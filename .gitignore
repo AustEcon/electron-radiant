@@ -38,4 +38,4 @@ xcuserdata/
 .vscode/
 # mypy
 .mypy_cache/
-
+venv
