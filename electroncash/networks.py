@@ -50,10 +50,10 @@ class MainNet(AbstractNet):
     WIF_PREFIX = 0x80
     ADDRTYPE_P2PKH = 0
     ADDRTYPE_P2SH = 5
-    CASHADDR_PREFIX = "bitcoincash"
+    CASHADDR_PREFIX = "radaddr"
     RPA_PREFIX = "paycode"
     HEADERS_URL = "http://bitcoincash.com/files/blockchain_headers"  # Unused
-    GENESIS = "000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f"
+    GENESIS = "0000000065d8ed5d8be28d6876b3ffb660ac2a6c0ca59e437e1f7a6f4e003fb4"
     DEFAULT_PORTS = {'t': '50001', 's': '50002'}
     DEFAULT_SERVERS = _read_json_dict('servers.json')  # DO NOT MODIFY IN CLIENT CODE
     TITLE = 'Electron Radiant'
@@ -175,9 +175,9 @@ class ScaleNet(TestNet):
     asert_daa.anchor = None  # Intentionally not specified because it's after checkpoint; blockchain.py will calculate
 
 class RegtestNet(TestNet):
-    GENESIS = "0f9188f13cb7b2c71f2a335e3a4fc328bf5beb436012afca590b1a11466e2206"
-    TITLE = 'Electron Cash Regtest'
-    CASHADDR_PREFIX = "bchreg"
+    GENESIS = "000000002008a2f4a76b850a838ae084994c200dc2fd354f73102298fe063a91"
+    TITLE = 'Electron Radiant Regtest'
+    CASHADDR_PREFIX = "radreg"
     REGTEST = True
 
     BITCOIN_CASH_FORK_BLOCK_HEIGHT = 0
@@ -185,7 +185,7 @@ class RegtestNet(TestNet):
 
     VERIFICATION_BLOCK_HEIGHT = 100
     VERIFICATION_BLOCK_MERKLE_ROOT = None
-    asert_daa = ASERTDaa(is_testnet=True) # not used on regtest
+    asert_daa = ASERTDaa(is_testnet=True)  # not used on regtest
 
     DEFAULT_SERVERS = _read_json_dict('servers_regtest.json')  # DO NOT MODIFY IN CLIENT CODE
 
